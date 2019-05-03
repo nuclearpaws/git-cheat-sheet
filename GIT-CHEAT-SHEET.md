@@ -6,13 +6,13 @@ A handy git bash cheat sheet...
 
 ## Contents
 
-1) [Setup](##Setup)
-1) [Cloning](##Cloning)
-1) [Branching](##Branching)
-1) [Commiting](##Commiting)
-1) [Keeping up to date](##Keeping-up-to-date)
-1) [Resetting Repostiory](##Resetting-Repository)
-1) [Sub Modules](##Sub-Modules)
+1) [Setup](#Setup)
+1) [Cloning](#Cloning)
+1) [Branching](#Branching)
+1) [Commiting](#Commiting)
+1) [Keeping up to date](#Keeping-up-to-date)
+1) [Resetting Repostiory](#Resetting-Repository)
+1) [Sub Modules](#Sub-Modules)
 
 ---
 
