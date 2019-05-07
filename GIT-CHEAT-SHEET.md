@@ -15,6 +15,7 @@ A handy git bash cheat sheet...
 1) [Sub Modules](#Sub-Modules)
 1) [Change Logs](#Change-Logs)
 1) [Tagging](#Tagging)
+1) [Aliases](#Aliases)
 1) [Maintenance](#Maintenance)
 
 ---
@@ -286,6 +287,28 @@ git push origin --delete <tag>
 ### Checking out Tags:
 ```
 git checkout <tag>
+```
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+---
+
+## Aliases
+
+### Add Alias:
+```
+git --global alias.<alias> <git command>
+```
+> Note the git aliases must be git commands. No standard CMD commands allowed.
+
+### Use Alias:
+```
+git <alias>
+```
+
+### Remove Alias:
+```
+git --global --unset alias.<alias>
 ```
 
 ^ [Back to top](#Git-Cheat-Sheet)
