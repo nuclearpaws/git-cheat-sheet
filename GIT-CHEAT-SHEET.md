@@ -15,6 +15,7 @@ A handy git bash cheat sheet...
 1) [Sub Modules](#Sub-Modules)
 1) [Change Logs](#Change-Logs)
 1) [Tagging](#Tagging)
+1) [Maintenance](#Maintenance)
 
 ---
 
@@ -289,4 +290,25 @@ git checkout <tag>
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
----
+--- 
+
+## Maintenance
+
+### Prune Upstreams:
+```
+git prune
+```
+
+### Prune References to Origin:
+```
+git fetch --prune origin
+```
+
+### General House Keeping:
+```
+git gc
+```
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+--- 
