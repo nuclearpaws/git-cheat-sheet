@@ -68,7 +68,7 @@ git checkout -b <name> <origin name>
 
 ### Set Upstream for Local Branch:
 ```
-git push origin <origin name>
+git push --set-upstream origin <origin name>
 ```
 
 ### Checkout Branch:
