@@ -13,6 +13,7 @@ A handy git bash cheat sheet...
 1) [Keeping up to date](#Keeping-up-to-date)
 1) [Resetting Repostiory](#Resetting-Repository)
 1) [Sub Modules](#Sub-Modules)
+1) [Change Logs](#Change-Logs)
 
 ---
 
@@ -182,6 +183,57 @@ git submodule update --init
 ### Update with nested submodules:
 ```
 git submodule update --init --recursive
+```
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+---
+
+## Change Logs
+
+### Standard:
+```
+git log
+```
+
+### GUI:
+```
+gitk
+```
+
+### Options:
+
+> Log of commits on current branch by "nuclearpaws" since 2 weeks ago:
+
+```
+git log --since="two weeks ago" --author="nuclearpaws"
+```
+
+> Log of last 10 commits on current branch:
+```
+git log -10
+```
+
+> Commits across all branches:
+```
+git log --all
+```
+
+> Note you can combine those!
+
+> Also note that `git log` and `gitk` are interchangable for most options.
+
+> If after running this (or in any other case) the terminal prefix cursor is `:` rather then `$` it means there is more to display. You can press the `Enter` key to get another line or the `Page Down` key to get your height more lines printed. To stop printing more you can exit by pressing `q`.
+
+### Making it console pretty:
+```
+git log --decorate --oneline --graph
+```
+
+> Once again, note all this can be combined!
+
+```
+git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
 ```
 
 ^ [Back to top](#Git-Cheat-Sheet)
