@@ -161,12 +161,12 @@ git reset --hard
 git clean -fdx
 ```
 
-### Undo commits (keep changes):
+### Undo commits (keep changes/uncommit):
 ```
 git reset --soft HEAD~<commit count>
 ```
 
-### Undo commits (discard changes):
+### Undo commits (discard changes/delete commit):
 ```
 git reset --hard HEAD~<commit count>
 ```
