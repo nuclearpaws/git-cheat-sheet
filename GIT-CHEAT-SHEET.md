@@ -2,7 +2,7 @@
 
 ## Intro
 
-A handy git bash cheat sheet...
+This is a small git bash cheat sheet I've been working on just to keep myself from googling things when I was starting out. Now it seems to have grown into a full on guide tho. Oh well...
 
 ## Contents
 
@@ -22,19 +22,27 @@ A handy git bash cheat sheet...
 
 ## Setup
 
-### Set Up User Email (not credentails):
+### Set Up User Email (This is NOT Credentails):
 ```
 git config --global user.email "<email>"
 ```
+> This email is displayed under commits, when you push them to origin. This property MUST be set for git to work.
 
-### Set Up UserName (not credentials):
+### Set Up UserName (This is NOT Credentials):
 ```
 git config --global user.name "<name>"
 ```
+> This name is displayed under commits, when you push them to origin. This property MUST be set for git to work.
 
-### Set Up Credentail Manager:
+### Set Up Credentail Manager):
 ```
 get config --global credential.helper wincred
+```
+> This is where credentials are going to be stored. `WinCred` is the default Windows Credentails Manager. Open START and search for `Credential Manager`.
+
+### Unsetting Config:
+```
+git config --global --unset <config to unset>
 ```
 
 ^ [Back to top](#Git-Cheat-Sheet)
@@ -47,6 +55,7 @@ get config --global credential.helper wincred
 ```
 git clone <git file url>
 ```
+> Note you can get the `git file url` from where your git is hosted. Usually there is a `Clone` button that reveals the url.
 
 ### Clone with Sub-Modules:
 ```
@@ -81,8 +90,11 @@ git checkout <name>
 
 ### Delete Local Branch:
 ```
-git branch -D <name>
+git branch --delete <name>
 ```
+> Note `-d` can be used instead of `--delete`.
+
+> Also note that you can do `-D` as well. The difference being that the `-d` will fail if there are un-pushed commits, meanwhile `-D` will delete the branch no matter what.
 
 ### List Local Branches:
 ```
@@ -91,13 +103,15 @@ git branch
 
 ### List Remote Branches:
 ```
-git branch -r
+git branch --remote
 ```
+> Note you can use `-r` instead of `--remote`.
 
 ### List Remote and Local Branches:
 ```
-git branch -a
+git branch --all
 ```
+> Note you can use `-a` instead of `--all`.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
@@ -105,9 +119,14 @@ git branch -a
 
 ## Commiting
 
-### Stage:
+### Stage File:
 ```
 git add <file>
+```
+
+### Stage All Files:
+```
+git add .
 ```
 
 ### Unstage:
@@ -233,7 +252,7 @@ git log --all
 git log --decorate --oneline --graph
 ```
 
-> Once again, note all this can be combined!
+> Do consider that all this can be combined like so:
 
 ```
 git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
@@ -277,7 +296,6 @@ git push origin --tags
 ```
 git tag -d <tag>
 ```
-
 > Note this only deletes tags locally. To delete on remote use:
 
 ```
@@ -310,6 +328,7 @@ git <alias>
 ```
 git --global --unset alias.<alias>
 ```
+> Note this is just like unsetting git config/settings.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
