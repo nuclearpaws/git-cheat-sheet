@@ -14,6 +14,7 @@ A handy git bash cheat sheet...
 1) [Resetting Repostiory](#Resetting-Repository)
 1) [Sub Modules](#Sub-Modules)
 1) [Change Logs](#Change-Logs)
+1) [Tagging](#Tagging)
 
 ---
 
@@ -234,6 +235,56 @@ git log --decorate --oneline --graph
 
 ```
 git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
+```
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+---
+
+## Tagging
+
+### Listing Tags:
+```
+git tag -l
+```
+
+### Creating Tags:
+```
+git tag -a <tag> -m <description>
+```
+
+### Get Details about Tag:
+```
+git show <tag>
+```
+
+### Retro Taggins:
+```
+git tag -a <tag> <commit hash>
+```
+
+### Storing Tags:
+> By default tags are only stored locally, and not transfered to remote with a `push`. In order to share the tags with the remote, use:
+
+```
+git push origin --tags
+```
+> Note that now anyone pulling from remote will get the tags too.
+
+### Deleting Tags:
+```
+git tag -d <tag>
+```
+
+> Note this only deletes tags locally. To delete on remote use:
+
+```
+git push origin --delete <tag>
+```
+
+### Checking out Tags:
+```
+git checkout <tag>
 ```
 
 ^ [Back to top](#Git-Cheat-Sheet)
