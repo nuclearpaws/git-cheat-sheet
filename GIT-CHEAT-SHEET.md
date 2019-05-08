@@ -113,6 +113,20 @@ git branch --all
 ```
 > Note you can use `-a` instead of `--all`.
 
+### Search Branches:
+```
+git branch --list "<pattern to find>"
+```
+> Example of pattern would be `feature/*` or `*123*`
+
+> Note this can also be combined with `--remote` to just search remote branches. etc.
+
+### Renaming a Branch:
+```
+git branch --move <new name>
+```
+> Note this renames your current branch.
+
 ^ [Back to top](#Git-Cheat-Sheet)
 
 ---
