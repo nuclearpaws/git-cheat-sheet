@@ -359,6 +359,7 @@ git prune
 ```
 git fetch --prune origin
 ```
+> Again, note you can just use `-p` over `--prune`.
 
 ### General House Keeping:
 ```
