@@ -61,6 +61,7 @@ git clone <git file url>
 ```
 git clone --recursive <git file url>
 ```
+> Note this does not work with jusr `-r`!
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
