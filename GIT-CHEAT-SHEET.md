@@ -11,7 +11,7 @@ This is a small git bash cheat sheet I've been working on just to keep myself fr
 1) [Branching](#Branching)
 1) [Commiting](#Commiting)
 1) [Keeping up to date](#Keeping-up-to-date)
-1) [Resetting Repostiory](#Resetting-Repository)
+1) [Undoing, Rolling Back and Resetting](#Undoing-Rolling-Back-and-Resetting)
 1) [Sub Modules](#Sub-Modules)
 1) [Change Logs](#Change-Logs)
 1) [Tagging](#Tagging)
@@ -184,9 +184,9 @@ git merge <name of branch to merge into current branch>
 
 ---
 
-## Resetting Repository
+## Undoing, Rolling Back and Resetting
 
-### Roll back file changes:
+### Roll back all file changes:
 ```
 git reset --hard
 ```
@@ -205,6 +205,14 @@ git reset --soft HEAD~<commit count>
 ```
 git reset --hard HEAD~<commit count>
 ```
+
+### Reset a file to another state:
+```
+git checkout <target branch> -- <path to the file>
+```
+> This is handy if you accidentally commit changes to config files.
+
+> Do note the space between `--`.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
