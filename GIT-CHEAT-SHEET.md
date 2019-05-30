@@ -285,12 +285,6 @@ git log --decorate --oneline --graph
 git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
 ```
 
-### Alternatives / TL;DR:
-```
-git reflog
-```
-> I wish I knew about this bad boy before I even wrote this section ;D
-
 ^ [Back to top](#Git-Cheat-Sheet)
 
 ---
@@ -440,6 +434,11 @@ git push
 --- 
 
 ## Other Tips
+
+### Logging Recent Git Commands:
+```
+git reflog
+```
 
 ### Show Git Bash History:
 ``` cmd
