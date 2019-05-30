@@ -18,6 +18,7 @@ This is a small git bash cheat sheet I've been working on just to keep myself fr
 1) [Aliases](#Aliases)
 1) [Maintenance](#Maintenance)
 1) [Cross Repo Merges](#Cross-Repository-Merges)
+1) [Other Tips](#Other-Tips)
 
 ---
 
@@ -282,6 +283,12 @@ git log --decorate --oneline --graph
 git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
 ```
 
+### Alternatives / TL;DR:
+```
+git reflog
+```
+> I wish I knew about this bad boy before I even wrote this section ;D
+
 ^ [Back to top](#Git-Cheat-Sheet)
 
 ---
@@ -425,6 +432,18 @@ git push
 > References for this part:
 >- [Merge difference code changes from one repository branch to another repository branch](https://stackoverflow.com/questions/21376489/merge-difference-code-changes-from-one-repository-branch-to-another-repository-b)
 >- [How to combine two branches from two different repositories in a single repository?](https://stackoverflow.com/questions/244695/how-to-combine-two-branches-from-two-different-repositories-in-a-single-reposito)
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+--- 
+
+## Other Tips
+
+### Show Git Bash History:
+```
+history
+```
+
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
