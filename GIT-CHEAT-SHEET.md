@@ -17,6 +17,7 @@ This is a small git bash cheat sheet I've been working on just to keep myself fr
 1) [Tagging](#Tagging)
 1) [Aliases](#Aliases)
 1) [Maintenance](#Maintenance)
+1) [Cross Repo Merges](#Cross-Repository-Merges)
 
 ---
 
@@ -373,12 +374,57 @@ git prune
 ```
 git fetch --prune origin
 ```
-> Again, note you can just use `-p` over `--prune`.
+> Again, note you can just use `-p` instead of `--prune`.
 
 ### General House Keeping:
 ```
 git gc
 ```
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+--- 
+
+## Cross Repository Merges
+> As odd as it may be, there is sometimes a need to merge two repositories. This is usually when something you have forked off has been updated and you require said update in your fork of it.
+
+> Do note that this is best done with forked repositories, however there is nothing stopping you from merging two completely separate repositories too. Thing may just get really messy.
+
+> I also recommend doing this on a seperate clone of the two repos as I believe once you merge the two repositories in this way, they will staty this way unless detached.
+
+### Make New Merge Environment:
+``` cmd
+mkdir CROSS_REPO_MERGE
+cd CROSS_REPO_MERGE
+git clone <TargetRepo>.git
+git clone <SourceRepo>.git
+cd TargetRepo
+```
+> Note this part is OS Specific. This example is made in Windows.
+
+### Set Environment to Reference Both Repos:
+```
+git remote add SOURCE ../<SourceRepo>/.git
+git fetch SOURCE
+git branch SOURCE RepoMergeBranch
+```
+
+### Merge Source into Target:
+```
+git merge <TargetBranch>
+git merge SOURCE/<SourceBranch>
+```
+
+### Commit and Push Merge:
+```
+git add .
+git commit -m "Merged <SourceRepo>/<SourceBranch> into <TargetRepo>/<TargetBranch>"
+git push
+```
+
+> References for this part:
+>- [Merge difference code changes from one repository branch to another repository branch](https://stackoverflow.com/questions/21376489/merge-difference-code-changes-from-one-repository-branch-to-another-repository-b)
+>- [How to combine two branches from two different repositories in a single repository?](https://stackoverflow.com/questions/244695/how-to-combine-two-branches-from-two-different-repositories-in-a-single-reposito)
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
