@@ -291,6 +291,11 @@ git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --onelin
 ```
 git tag -l
 ```
+> Note that tags can be listed in nicer ways, just like logs.
+```
+git log --tags --simplify-by-decoration --pretty="format:%ai -%d"
+```
+> For example, the above command will list tags with their creation date.
 
 ### Creating Tags:
 ```
