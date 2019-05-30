@@ -4,6 +4,8 @@
 
 This is a small git bash cheat sheet I've been working on just to keep myself from googling things when I was starting out. Now it seems to have grown into a full on guide tho. Oh well...
 
+---
+
 ## Contents
 
 1) [Setup](#Setup)
@@ -440,9 +442,10 @@ git push
 ## Other Tips
 
 ### Show Git Bash History:
-```
+``` cmd
 history
 ```
+> Note this may be OS Specific. Example is in Windows.
 
 
 ^ [Back to top](#Git-Cheat-Sheet)
