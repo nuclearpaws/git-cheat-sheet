@@ -209,6 +209,15 @@ git reset --soft HEAD~<commit count>
 ```
 git reset --hard HEAD~<commit count>
 ```
+> Note that if the commit is already pushed to remote, your local branch will "diverge" from master. This can be fixed by overwriting a commit with a forced push.
+
+### Forcing a Push (this can overwrite commits on remote):
+```
+git push --force
+```
+> As with many parameters, you can just use `-f` instead of `--force`. 
+
+> Please Note that this can be a very dangerous command to execute! Always make sure your branch is up to date with remote before you push your work this way.
 
 ### Reset a file to another state:
 ```
