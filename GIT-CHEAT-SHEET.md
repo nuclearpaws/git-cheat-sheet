@@ -13,7 +13,8 @@ This is a small git bash cheat sheet I've been working on just to keep myself fr
 1) [Branching](#Branching)
 1) [Commiting](#Commiting)
 1) [Keeping up to date](#Keeping-up-to-date)
-1) [Undoing, Rolling Back and Resetting](#Undoing-Rolling-Back-and-Resetting)
+1) [Undo, Rollback and Reset](#Undo-Rollback-and-Reset)
+1) [Stashing Changes](#Stashing-Changes)
 1) [Sub Modules](#Sub-Modules)
 1) [Change Logs](#Change-Logs)
 1) [Tagging](#Tagging)
@@ -188,7 +189,7 @@ git merge <name of branch to merge into current branch>
 
 ---
 
-## Undoing, Rolling Back and Resetting
+## Undo, Rollback and Reset
 
 ### Roll back all file changes:
 ```
@@ -226,6 +227,61 @@ git checkout <target branch> -- <path to the file>
 > This is handy if you accidentally commit changes to config files.
 
 > Do note the space between `--`.
+
+^ [Back to top](#Git-Cheat-Sheet)
+
+---
+
+## Stashing Changes
+
+> When you have some uncommited changes on your branch, and you dont want to commit them, but you have to switch branches, git stash may be for you. This is also useful if you accidentally started doing work on the wrong branch and cannot change it now due to uncommited changes.
+
+### Storing the Changes:
+```
+git stash
+```
+> Alternatively you can also use:
+```
+git stash save <message>
+```
+> or
+```
+git stash push <message>
+```
+> The Message is optional in those examples and represents a commit message like name to make identification of the stash easier.
+
+> Note that if one is not porivded, the message gets automatically generated and tends to be descriptive enough to keep track of different stashes especially if you keep only the essential ones around.
+
+### Managing Stashes:
+> You can view all stashes with:
+```
+git stash list
+```
+
+> You can delete a stash with:
+```
+git stash dtop <id>
+```
+> Where the `<id>` is the "ID" of the stash you want to delete.
+
+> You can also clear all stashes out with:
+```
+got stash clear
+```
+> Be warned this will delete **ALL** stashes!
+
+### Applying the Changes:
+> To apply stashed changes to your branch use:
+```
+git stash pop <id>
+```
+> Note that the `<id>` is optional, and what it represents is the "ID" of the stash. You can see all stash IDs when you view all stashes. It tends to be that its the stack order of the stashes, where 0 is your most recent one, increasting as your stashes get older.
+
+> Note you can also apply the stashed changes and keep the stash for later use again with:
+```
+git stash apply <id>
+```
+> Note that the `<id>` is once again optional.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
