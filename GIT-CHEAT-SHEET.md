@@ -60,13 +60,13 @@ git config --global --unset <config to unset>
 ```
 git clone <git file url>
 ```
-> Note you can get the `git file url` from where your git is hosted. Usually there is a `Clone` button that reveals the url.
+> **Notice:** you can get the `git file url` from where your git is hosted. Usually there is a `Clone` button that reveals the url.
 
 ### Clone with Sub-Modules:
 ```
 git clone --recursive <git file url>
 ```
-> Note this does not work with jusr `-r`!
+> **Notice:** this does not work with jusr `-r`!
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
@@ -98,9 +98,9 @@ git checkout <name>
 ```
 git branch --delete <name>
 ```
-> Note `-d` can be used instead of `--delete`.
+> **Notice:** `-d` can be used instead of `--delete`.
 
-> Also note that you can do `-D` as well. The difference being that the `-d` will fail if there are un-pushed commits, meanwhile `-D` will delete the branch no matter what.
+> **Notice:** that you can do `-D` as well. The difference being that the `-d` will fail if there are un-pushed commits, meanwhile `-D` will delete the branch no matter what.
 
 ### List Local Branches:
 ```
@@ -111,27 +111,33 @@ git branch
 ```
 git branch --remote
 ```
-> Note you can use `-r` instead of `--remote`.
+> **Notice:** you can use `-r` instead of `--remote`.
 
 ### List Remote and Local Branches:
 ```
 git branch --all
 ```
-> Note you can use `-a` instead of `--all`.
+> **Notice:** you can use `-a` instead of `--all`.
 
 ### Search Branches:
 ```
 git branch --list "<pattern to find>"
 ```
-> Example of pattern would be `feature/*` or `*123*`
+> **Notice:** And example of the pattern would be `feature/*` or `*123*`
 
-> Note this can also be combined with `--remote` to just search remote branches. etc.
+> **Notice:** this can also be combined with `--remote` to just search remote branches. etc.
 
 ### Renaming a Branch:
 ```
 git branch --move <new name>
 ```
-> Note this renames your current branch.
+> **Notice:** this renames your current branch.
+
+### Delete Remote Branch:
+```
+git push origin --delete <branch name>
+```
+> **Warning:** this is potentially dangerous as recovery may be impossible.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
@@ -210,7 +216,7 @@ git reset --soft HEAD~<commit count>
 ```
 git reset --hard HEAD~<commit count>
 ```
-> Note that if the commit is already pushed to remote, your local branch will "diverge" from master. This can be fixed by overwriting a commit with a forced push.
+> **Notice:** that if the commit is already pushed to remote, your local branch will "diverge" from master. This can be fixed by overwriting a commit with a forced push.
 
 ### Forcing a Push (this can overwrite commits on remote):
 ```
@@ -218,7 +224,7 @@ git push --force
 ```
 > As with many parameters, you can just use `-f` instead of `--force`. 
 
-> Please Note that this can be a very dangerous command to execute! Always make sure your branch is up to date with remote before you push your work this way.
+> **Notice:** this can be a very dangerous command to execute! Always make sure your branch is up to date with remote before you push your work this way.
 
 ### Reset a file to another state:
 ```
@@ -241,7 +247,7 @@ git checkout <target branch> -- <path to the file>
 ```
 git stash
 ```
-> Note that this will push all your changes to the stash and reset your current work environment back to whatever the branch head is poining at.
+> **Notice:** this will push all your changes to the stash and reset your current work environment back to whatever the branch head is poining at.
 
 > Alternatively you can use:
 ```
@@ -267,16 +273,16 @@ git stash drop <id>
 ```
 got stash clear
 ```
-> Be warned this will delete **ALL** stashes!
+> **Warning:** this will delete **ALL** stashes!
 
 ### Applying the Changes:
 > To apply stashed changes to your branch use:
 ```
 git stash pop <id>
 ```
-> Note that the `<id>` is optional, and what it represents is the "ID" of the stash. You can see all stash IDs when you view all stashes. It tends to be that its the stack order of the stashes, where 0 is your most recent one, increasting as your stashes get older.
+> **Notice:** that the `<id>` is optional, and what it represents is the "ID" of the stash. You can see all stash IDs when you view all stashes. It tends to be that its the stack order of the stashes, where 0 is your most recent one, increasting as your stashes get older.
 
-> Note you can also apply the stashed changes and keep the stash for later use again with:
+> **(Notice:** you can also apply the stashed changes and keep the stash for later use again with:
 ```
 git stash apply <id>
 ```
@@ -332,9 +338,9 @@ git log -10
 git log --all
 ```
 
-> Note you can combine those!
+> **Notice:** you can combine those!
 
-> Also note that `git log` and `gitk` are interchangable for most options.
+> **Notice:** that `git log` and `gitk` are interchangable for most options.
 
 > If after running this (or in any other case) the terminal prefix cursor is `:` rather then `$` it means there is more to display. You can press the `Enter` key to get another line or the `Page Down` key to get your height more lines printed. To stop printing more you can exit by pressing `q`.
 
@@ -343,7 +349,7 @@ git log --all
 git log --decorate --oneline --graph
 ```
 
-> Do consider that all this can be combined like so:
+> **Notice:** consider that all this can be combined like so:
 
 ```
 git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --oneline --graph
@@ -359,7 +365,7 @@ git log --since="two weeks ago" --author="nuclearpaws" --all --decorate --onelin
 ```
 git tag -l
 ```
-> Note that tags can be listed in nicer ways, just like logs.
+> **Notice:** that tags can be listed in nicer ways, just like logs.
 ```
 git log --tags --simplify-by-decoration --pretty="format:%ai -%d"
 ```
@@ -381,18 +387,18 @@ git tag -a <tag> <commit hash>
 ```
 
 ### Storing Tags:
-> By default tags are only stored locally, and not transfered to remote with a `push`. In order to share the tags with the remote, use:
+> **Notice:** by default tags are only stored locally, and not transfered to remote with a `push`. In order to share the tags with the remote, use:
 
 ```
 git push origin --tags
 ```
-> Note that now anyone pulling from remote will get the tags too.
+> **Notice:** that now anyone pulling from remote will get the tags too.
 
 ### Deleting Tags:
 ```
 git tag -d <tag>
 ```
-> Note this only deletes tags locally. To delete on remote use:
+> **Notice:** this only deletes tags locally. To delete on remote use:
 
 ```
 git push origin --delete <tag>
@@ -413,7 +419,7 @@ git checkout <tag>
 ```
 git --global alias.<alias> <git command>
 ```
-> Note the git aliases must be git commands. No standard CMD commands allowed.
+> **Notice:** the git aliases must be git commands. No standard CMD commands allowed.
 
 ### Use Alias:
 ```
@@ -424,7 +430,7 @@ git <alias>
 ```
 git --global --unset alias.<alias>
 ```
-> Note this is just like unsetting git config/settings.
+> **Notice:** this is just like unsetting git config/settings.
 
 ^ [Back to top](#Git-Cheat-Sheet)
 
@@ -441,7 +447,7 @@ git prune
 ```
 git fetch --prune origin
 ```
-> Again, note you can just use `-p` instead of `--prune`.
+> **Notice:** you can just use `-p` instead of `--prune`.
 
 ### General House Keeping:
 ```
@@ -460,14 +466,14 @@ git gc
 > I also recommend doing this on a seperate clone of the two repos as I believe once you merge the two repositories in this way, they will staty this way unless detached.
 
 ### Make New Merge Environment:
-``` cmd
+```cmd
 mkdir CROSS_REPO_MERGE
 cd CROSS_REPO_MERGE
 git clone <TargetRepo>.git
 git clone <SourceRepo>.git
 cd TargetRepo
 ```
-> Note this part is OS Specific. This example is made in Windows.
+> **Notice:** this part is OS Specific. This example is made in Windows.
 
 ### Set Environment to Reference Both Repos:
 ```
@@ -508,7 +514,7 @@ git reflog
 ``` cmd
 history
 ```
-> Note this may be OS Specific. Example is in Windows.
+> **Notice:** this may be OS Specific. Example is in Windows.
 
 
 ^ [Back to top](#Git-Cheat-Sheet)
