@@ -226,6 +226,13 @@ git push --force
 
 > **Notice:** this can be a very dangerous command to execute! Always make sure your branch is up to date with remote before you push your work this way.
 
+### Reset local branch to the remote repository HEAD
+While on `<target branch>`
+```
+git fetch origin
+git reset --hard origin/<target branch>
+```
+
 ### Reset a file to another state:
 ```
 git checkout <target branch> -- <path to the file>
