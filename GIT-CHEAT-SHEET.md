@@ -232,7 +232,7 @@ While on `<target branch>`
 git fetch origin
 git reset --hard origin/<target branch>
 ```
-It is also advisible to [delete all untracked changes](#delete-all-untracked-files) afterwards.
+It is also advisible to [delete all untracked files](#delete-all-untracked-files) afterwards.
 ### Reset a file to another state:
 ```
 git checkout <target branch> -- <path to the file>
