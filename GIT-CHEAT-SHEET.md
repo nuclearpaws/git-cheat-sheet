@@ -247,7 +247,7 @@ git checkout <target branch> -- <path to the file>
 ```
 git stash
 ```
-> **Notice:** this will push all your changes to the stash and reset your current work environment back to whatever the branch head is poining at.
+> **Notice:** this will push all your tracked file changes to the stash and reset your current work environment back to whatever the branch head is poining at.
 
 > Alternatively you can use:
 ```
@@ -255,7 +255,17 @@ git stash save <message>
 ```
 > The Message is optional and represents a commit message like attribute to make identification of the stash easier, should you have many to keep track of.
 
-> Do note that if the message is not provided, it gets automatically generated based on changes mage. This automatically generated message tends to be descriptive enough to keep track of different stashes.
+> **Notice:** if the message is not provided, it gets automatically generated based on changes mage. This automatically generated message tends to be descriptive enough to keep track of different stashes.
+
+If you want to stash untracked files use:
+```
+git stash --include-untracked
+```
+alternativley if you want to also stash all *git ignored* files use:
+```
+git stash --all
+```
+
 
 ### Managing Stashes:
 > You can view all stashes with:
